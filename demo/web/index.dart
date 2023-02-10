@@ -1,6 +1,6 @@
 library ngbs.index;
 
-import 'package:angular/angular.dart';
+import 'package:ngdart/angular.dart';
 import 'package:dson/dson.dart';
 
 import 'components/accordion/accordion_demo.dart';

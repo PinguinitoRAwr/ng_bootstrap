@@ -1,3 +1,7 @@
+@mixin hover() {
+  &:hover { @content; }
+}
+
 bs-table {
   display: block;
   overflow-x: auto;
@@ -12,7 +16,7 @@ bs-table {
   }
 
   .td-select {
-    padding: $table-cell-padding;
+    padding: $table-cell-padding-x $table-cell-padding-y ;
     vertical-align: top;
     display: flex;
     align-items: center;
@@ -21,7 +25,7 @@ bs-table {
 
   .th,
   .td {
-    padding: $table-cell-padding;
+    padding: $table-cell-padding-x $table-cell-padding-y ;
     vertical-align: top;
     border-top: $table-border-width solid $table-border-color;
     width: 100%;
@@ -34,12 +38,12 @@ bs-table {
 
   .thead {
     //position: fixed;
-    background-color: $table-head-bg;
+    background-color: $white !important;
 
-   .th {
-     vertical-align: bottom;
-     border-bottom: (2 * $table-border-width) solid $table-border-color;
-   }
+    .th {
+      vertical-align: bottom;
+      border-bottom: (2 * $table-border-width) solid $table-border-color;
+    }
   }
 
   .tbody {
@@ -47,7 +51,7 @@ bs-table {
     overflow-y: auto;
   }
 
-  .tbody + .tbody {
+  .tbody+.tbody {
     border-top: (2 * $table-border-width) solid $table-border-color;
   }
 
@@ -57,9 +61,10 @@ bs-table {
   //
 
   &.table-sm {
+
     .th,
     .td {
-      padding: $table-cell-padding-sm;
+      padding: $table-cell-padding-x-sm $table-cell-padding-y-sm ;
     }
   }
 
@@ -71,6 +76,7 @@ bs-table {
   }
 
   .thead {
+
     .th,
     .td {
       border-bottom-width: (2 * $table-border-width);
@@ -113,40 +119,40 @@ bs-table {
   // stylelint-disable-next-line no-duplicate-selectors
   &.thead-dark {
     .th {
-      color: $table-dark-color;
-      background-color: $table-dark-bg;
-      border-color: $table-dark-border-color;
+      color: $table-border-color;
+      border-color: $table-border-color;
+      // border-color: $table-dark-border-color;
     }
   }
 
   &.thead-light {
     .th {
-      color: $table-head-color;
-      background-color: $table-head-bg;
+      color: $table-color;
+      background-color: $white !important;
       border-color: $table-border-color;
     }
   }
 
   &.table-dark {
-    color: $table-dark-color;
-    background-color: $table-dark-bg;
+    color: $table-color;
+    background-color: $table-bg;
 
     .th,
     .td,
     .thead .th {
-      border-color: $table-dark-border-color;
+      border-color: $table-border-color;
     }
 
     &.table-striped {
       .tbody .tr:nth-of-type(odd) {
-        background-color: $table-dark-accent-bg;
+        background-color: $table-accent-bg;
       }
     }
 
     &.table-hover {
       .tbody .tr {
         @include hover {
-          background-color: $table-dark-hover-bg;
+          background-color: $table-hover-bg;
         }
       }
     }

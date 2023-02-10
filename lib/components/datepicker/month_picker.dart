@@ -2,7 +2,8 @@ part of bs_date_picker;
 
 /// Creates a [BsMonthPickerComponent], this will be the view showed in the [NgBsDatePicker] when user clicks
 /// month header button
-@Component (selector: 'bs-month-picker',
+@Component(
+    selector: 'bs-month-picker',
     templateUrl: 'month_picker.html',
     directives: [coreDirectives],
     providers: [BsDatePickerComponent])
@@ -23,14 +24,15 @@ class BsMonthPickerComponent {
   String maxMode = 'year';
 
   void refreshViewHandler() {
-    var months = List<DisplayedDate>(12);
     var initDate = datePicker._initDate;
     num year = initDate.year;
-    DateTime date;
-    for (var i = 0; i < 12; i++) {
-      date = DateTime (year, i + 1, 1);
-      months[i] = datePicker.createDateObject(date, datePicker.formatMonth);
-    }
+    var months = List.generate(
+      12,
+      (i) => datePicker.createDateObject(
+        DateTime(year, i + 1, 1),
+        datePicker.formatMonth,
+      ),
+    );
     dayTitle = datePicker.dateFilter(initDate, datePicker.formatDay);
     yearTitle = datePicker.dateFilter(initDate, datePicker.formatYear);
     rows = datePicker.split(months, 3);

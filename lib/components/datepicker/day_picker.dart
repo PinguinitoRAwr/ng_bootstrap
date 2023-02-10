@@ -2,13 +2,16 @@ part of bs_date_picker;
 
 /// Creates an [BsDayPickerComponent], this will be the view showed in the [NgBsDatePicker] when user clicks
 /// day header button
-@Component(selector: 'bs-day-picker', templateUrl: 'day_picker.html', directives: [coreDirectives])
+@Component(
+    selector: 'bs-day-picker',
+    templateUrl: 'day_picker.html',
+    directives: [coreDirectives])
 class BsDayPickerComponent {
   /// provides access to [BsDatePickerComponent] parent container
   BsDatePickerComponent datePicker;
 
   /// labels of the days week
-  List<Map<String,String>> labels = [];
+  List<Map<String, String>> labels = [];
 
   /// provides the label that will appears in the month button of day view
   String monthTitle;
@@ -27,8 +30,8 @@ class BsDayPickerComponent {
 
   ///
   List<DateTime> getDates(DateTime startDate, num n) {
-    var dates = List<DateTime>(n);
     var current = startDate;
+    var dates = List.filled(n, current);
     var i = 0;
     var date;
     while (i < n) {
@@ -56,7 +59,8 @@ class BsDayPickerComponent {
     var firstThursday = DateTime(checkDate.year, DateTime.january, 1);
 
     if (firstThursday.weekday != (DateTime.thursday)) {
-      firstThursday = DateTime(checkDate.year, DateTime.january, 1 + ((4 - firstThursday.weekday) + 7) % 7);
+      firstThursday = DateTime(checkDate.year, DateTime.january,
+          1 + ((4 - firstThursday.weekday) + 7) % 7);
     }
 
     // The weeknumber is the number of weeks between the
@@ -68,9 +72,11 @@ class BsDayPickerComponent {
     var initDate = datePicker._initDate;
     num year = initDate.year;
     num month = initDate.month;
-    var firstDayOfMonth = DateTime(year, month, 1 - DateTime(year, month, 1, 12).weekday, 12);
+    var firstDayOfMonth =
+        DateTime(year, month, 1 - DateTime(year, month, 1, 12).weekday, 12);
     var difference = datePicker.startingDay - firstDayOfMonth.day;
-    var numDisplayedFromPreviousMonth = (difference > 0) ? 7 - difference : -difference;
+    var numDisplayedFromPreviousMonth =
+        (difference > 0) ? 7 - difference : -difference;
     var firstDate = firstDayOfMonth;
     if (numDisplayedFromPreviousMonth > 0) {
       //todo luisvt: not sure what to do with next line
@@ -80,7 +86,8 @@ class BsDayPickerComponent {
     var _days = getDates(firstDate, 42);
     var days = <DisplayedDate>[];
     for (num i = 0; i < 42; i++) {
-      var _dateObject = datePicker.createDateObject(_days[i], datePicker.formatDay);
+      var _dateObject =
+          datePicker.createDateObject(_days[i], datePicker.formatDay);
       _dateObject.secondary = _days[i].month != month;
       days.add(_dateObject);
     }
@@ -96,9 +103,11 @@ class BsDayPickerComponent {
     rows = datePicker.split(days, 7);
     if (datePicker.showWeeks) {
       weekNumbers.clear();
-      num thursdayIndex = (4 + 7 - datePicker.startingDay) % 7, numWeeks = rows.length;
+      num thursdayIndex = (4 + 7 - datePicker.startingDay) % 7,
+          numWeeks = rows.length;
       for (num curWeek = 0; curWeek < numWeeks; curWeek++) {
-        weekNumbers.add(getISO8601WeekNumber(rows[curWeek][thursdayIndex].date) + 1);
+        weekNumbers
+            .add(getISO8601WeekNumber(rows[curWeek][thursdayIndex].date) + 1);
       }
     }
   }

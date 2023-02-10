@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:html';
 import 'dart:math' as math;
-import 'package:angular/angular.dart';
+
+import 'package:ngdart/angular.dart';
 
 /// Quick "previous" and "next" links for simple
 /// pagination implementations with light markup and styles.

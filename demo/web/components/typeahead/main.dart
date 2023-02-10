@@ -1,6 +1,6 @@
 library typeahead.main;
 
-import 'package:angular/angular.dart';
+import 'package:ngdart/angular.dart';
 
 import 'typeahead_demo.dart';
 import 'package:dson/dson.dart';

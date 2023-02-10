@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'package:angular/angular.dart';
+
+import 'package:ngdart/angular.dart';
 
 /// Directives needed to create a tab-set
 const bsTabsxDirectives = [BsTabxDirective, BsTabxHeaderDirective, BsTabsxComponents];
@@ -138,7 +139,7 @@ class BsTabxDirective {
     active ??= true;
     if(_active != active){
       _active = active;
-      _ref.detectChanges();
+      _ref.markForCheck();
     }
     if (active) {
       _selectCtrl.add(this);

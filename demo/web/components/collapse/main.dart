@@ -1,4 +1,4 @@
-import 'package:angular/angular.dart';
+import 'package:ngdart/angular.dart';
 import 'collapse_demo.template.dart' show CollapseDemoNgFactory;
 
 void main() {

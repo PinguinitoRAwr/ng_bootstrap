@@ -2,8 +2,8 @@ library table.table_demo;
 
 import 'dart:async';
 
-import 'package:angular/angular.dart';
-import 'package:angular_forms/angular_forms.dart';
+import 'package:ngdart/angular.dart';
+import 'package:ngforms/angular_forms.dart';
 import 'package:dson/dson.dart';
 import 'package:http/browser_client.dart';
 import 'package:http/http.dart';

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:html';
-import 'package:angular/angular.dart';
+
+import 'package:ngdart/angular.dart';
 
 /// Provide contextual feedback messages for typical user actions
 /// with the handful of available and flexible alert messages.

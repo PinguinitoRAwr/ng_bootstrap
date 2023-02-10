@@ -2,7 +2,8 @@ part of bs_date_picker;
 
 /// Creates an [BsYearPickerComponent], this will be the view showed in the [NgBsDatePicker] when user clicks
 /// year header button
-@Component (selector: 'bs-year-picker',
+@Component(
+    selector: 'bs-year-picker',
     templateUrl: 'year_picker.html',
     directives: [coreDirectives],
     providers: [BsDatePickerComponent])
@@ -24,18 +25,24 @@ class BsYearPickerComponent {
       ((year - 1) ~/ datePicker.yearRange) * datePicker.yearRange + 1;
 
   void refreshViewHandler() {
-    var years = List<DisplayedDate>(datePicker.yearRange);
+    var years = List.filled(
+      datePicker.yearRange,
+      datePicker.createDateObject(
+        DateTime(getStartingYear(datePicker._initDate.year), 0, 1),
+        datePicker.formatYear,
+      ),
+    );
     DateTime date;
     var initDate = datePicker._initDate;
-    for (var i = 0, start = getStartingYear(initDate.year); i <
-        datePicker.yearRange; i ++) {
-      date = DateTime (start + i, 0, 1);
+    for (var i = 0, start = getStartingYear(initDate.year);
+        i < datePicker.yearRange;
+        i++) {
+      date = DateTime(start + i, 0, 1);
       years[i] = datePicker.createDateObject(date, datePicker.formatYear);
     }
     dayTitle = datePicker.dateFilter(initDate, datePicker.formatDay);
 
-    monthTitle =
-        datePicker.dateFilter(initDate, datePicker.formatMonth);
+    monthTitle = datePicker.dateFilter(initDate, datePicker.formatMonth);
 
     rows = datePicker.split(years, 5);
   }

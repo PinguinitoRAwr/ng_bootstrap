@@ -1,4 +1,4 @@
-import 'package:angular/angular.dart';
+import 'package:ngdart/angular.dart';
 import 'dart:async';
 import 'dart:html';
 import 'package:ng_bootstrap/components/tabsx/tabsx.dart';

@@ -1,5 +1,7 @@
 import 'dart:math' as math;
-import 'package:angular/angular.dart';
+
+import 'package:ngdart/angular.dart';
+
 import 'pager.dart';
 
 /// Provide pagination links for your site or app with

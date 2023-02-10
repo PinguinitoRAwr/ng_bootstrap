@@ -1,5 +1,5 @@
 <bs-dropdown [(isOpen)]="isOpen" style="width: 100%">
-  <bs-dropdown-toggle class="input-group">
+  <bs-dropdown-toggle class="input-group" >
     <input type="text"
            class="form-control"
            [placeholder]="placeholder"
@@ -7,7 +7,7 @@
            (ngModelChange)="processMatches($event)"
            (click)="$event.stopPropagation()"
            (keyup)="onTypeaheadChange($event)">
-    <bs-search-clear
+    <bs-search-clear @skipSchemaValidationFor="bs-search-clear"
         *ngIf="ngModel.viewModel.length > 0"
         class="fa fa-times"
         (click)="clear($event)"></bs-search-clear>

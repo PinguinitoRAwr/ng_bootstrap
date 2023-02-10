@@ -1,6 +1,6 @@
 <bs-dropdown [(isOpen)]="isOpen" class="d-block">
   <bs-dropdown-toggle class="input-group">
-    <input type="text" class="form-control" (change)="valueChanged($event.target.value)" [value]="ngModel.viewModel | date: format">
+    <input type="text" class="form-control" (change)="valueChanged($event.target.value)" [value]="$pipe.date(ngModel.viewModel, format)">
     <span class="input-group-append">
       <bs-toggle-button class="btn btn-secondary" [(ngModel)]="isOpen" (click)="$event.stopPropagation()">
         <i class="fa fa-calendar"></i>

@@ -1,6 +1,5 @@
-import 'package:angular/angular.dart';
-import 'package:angular/core.dart';
-import 'package:angular_forms/angular_forms.dart';
+import 'package:ngdart/angular.dart';
+import 'package:ngforms/angular_forms.dart';
 
 /// Provides an easy way to create an input element with built-in validation
 @Component(

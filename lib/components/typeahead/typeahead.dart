@@ -1,11 +1,12 @@
 import 'dart:async';
 import 'dart:html';
 
-import 'package:angular/angular.dart';
-import 'package:ng_bootstrap/components/dropdown/index.dart';
+import 'package:ngdart/angular.dart';
+import 'package:ngforms/angular_forms.dart';
 import 'package:stream_transform/stream_transform.dart';
+
 import 'package:ng_bootstrap/components/button/toggle.dart';
-import 'package:angular_forms/angular_forms.dart';
+import 'package:ng_bootstrap/components/dropdown/index.dart';
 
 // todo: options loading by http not yet implemented
 /// Creates a type-ahead component
@@ -17,6 +18,7 @@ import 'package:angular_forms/angular_forms.dart';
     directives: [
       bsDropdownDirectives,
       BsToggleButtonDirective,
+      BsTypeAheadComponent,
       coreDirectives,
       formDirectives
     ])
@@ -216,7 +218,7 @@ class BsTypeAheadComponent extends DefaultValueAccessor {
   }
 
   /// Returns the item as string
-  dynamic/*String | Map*/ _itemString(/*String | Map*/ item) => item is String
+  dynamic /*String | Map*/ _itemString(/*String | Map*/ item) => item is String
       ? item
       : item is Map
           ? item[optionField]
@@ -236,9 +238,9 @@ class BsTypeAheadComponent extends DefaultValueAccessor {
 
   /// captures the whole query string and replace it with the string that will be used to match
   /// the results, for example if the capture is "a" the result will be \a
-  RegExp _escapeRegexp(String queryToEscape) => RegExp(
-      queryToEscape.replaceAll(RegExp(r'([.?*+^$[\]\\(){}|-])'), r'\$1'),
-      caseSensitive: false);
+  RegExp _escapeRegexp(String queryToEscape) =>
+      RegExp(queryToEscape.replaceAll(RegExp(r'([.?*+^$[\]\\(){}|-])'), r'\$1'),
+          caseSensitive: false);
 
   /// makes the next item active/highlighted
   void _prevActiveMatch() {
@@ -260,5 +262,6 @@ class BsTypeAheadComponent extends DefaultValueAccessor {
   @HostListener('input', ['\$event'])
   bool onInput($event) => true;
 
-  Map<String, dynamic> inputMatchTemplateOutlet(dynamic match) => {r'$implicit': match};
+  Map<String, dynamic> inputMatchTemplateOutlet(dynamic match) =>
+      {r'$implicit': match};
 }

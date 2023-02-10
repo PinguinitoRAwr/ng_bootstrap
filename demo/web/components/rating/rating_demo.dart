@@ -1,5 +1,5 @@
-import 'package:angular/angular.dart';
-import 'package:angular_forms/angular_forms.dart';
+import 'package:ngdart/angular.dart';
+import 'package:ngforms/angular_forms.dart';
 import 'package:ng_bootstrap/components/rating/rating.dart';
 
 @Component(selector: 'rating-demo',

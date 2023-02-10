@@ -1,7 +1,7 @@
-import 'package:angular/angular.dart';
+import 'dart:async';
 
 import 'package:js_shims/js_shims.dart';
-import 'dart:async';
+import 'package:ngdart/angular.dart';
 
 /// List of Directives needed to create a carousel
 const bsCarouselComponents = [BsCarouselComponent, BsSlideComponent];

@@ -138,7 +138,7 @@ Total Items: {{mapConfig.totalItems}}</pre>
         <bs-column header="Office" fieldName="office" sort="ASC"></bs-column>
         <bs-column header="Extn." fieldName="ext" sort="NONE"></bs-column>
         <bs-column header="Start date" fieldName="startDate">
-          <template let-row>{{row.startDate | date:'fullDate'}}</template>
+          <template let-row>$pipe.date(row.startDate , 'fullDate')</template>
         </bs-column>
         <bs-column header="Salary ($)" fieldName="salary" orderBy="salary" style="width: 120px; flex: none">
           <template let-row>U$ {{row.salary}}</template>

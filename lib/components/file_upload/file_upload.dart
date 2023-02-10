@@ -3,7 +3,7 @@ library bs_file_upload;
 import 'dart:async';
 import 'dart:html';
 
-import 'package:angular/core.dart';
+import 'package:ngdart/angular.dart';
 
 part 'file_select_directive.dart';
 part 'file_drop_directive.dart';

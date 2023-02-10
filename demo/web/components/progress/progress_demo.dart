@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:angular/angular.dart';
+import 'package:ngdart/angular.dart';
 import 'package:ng_bootstrap/ng_bootstrap.dart';
-import 'package:angular_forms/angular_forms.dart';
+import 'package:ngforms/angular_forms.dart';
 
 @Component (selector: 'progress-demo',
     templateUrl: 'progress_demo.html',

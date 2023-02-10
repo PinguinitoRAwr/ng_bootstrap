@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'package:angular/angular.dart';
+
+import 'package:ngdart/angular.dart';
 
 /// Directives needed to create a tab-set
 const NG_BOOTSTRAP_TABS_DIRECTIVES = [BsTabComponent, BsTabsComponent, BsTabContentComponent, BsTabPanelDirective];

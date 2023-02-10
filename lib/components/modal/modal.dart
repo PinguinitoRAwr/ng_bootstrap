@@ -4,7 +4,8 @@
 
 import 'dart:async';
 import 'dart:html';
-import 'package:angular/angular.dart';
+
+import 'package:ngdart/angular.dart';
 
 /// Shows a bootstrap modal dialog.
 /// Set the body of the dialog by adding content to the modal tag:

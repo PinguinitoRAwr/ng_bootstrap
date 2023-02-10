@@ -1,6 +1,6 @@
 import 'dart:html';
 
-import 'package:angular/angular.dart';
+import 'package:ngdart/angular.dart';
 import 'package:ng_bootstrap/ng_bootstrap.dart';
 import 'package:string_converters/string_converters.dart';
 

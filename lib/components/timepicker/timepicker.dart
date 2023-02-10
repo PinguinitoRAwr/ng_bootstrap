@@ -1,6 +1,7 @@
-import 'package:angular/angular.dart';
 import 'dart:html';
-import 'package:angular_forms/angular_forms.dart';
+
+import 'package:ngdart/angular.dart';
+import 'package:ngforms/angular_forms.dart';
 
 // todo: implement global configuration via DI
 
@@ -137,7 +138,7 @@ class BsTimePickerComponent extends DefaultValueAccessor implements OnInit {
       // Convert 24 to 12 hour system
       _hours = (_hours ==  0 || _hours ==  12) ? 12 : _hours % 12;
     }
-    // this.hours = keyboardChange === 'h' ? hours : this.pad(hours);
+    // this.hours = keyboardChange == 'h' ? hours : this.pad(hours);
 
     // if (keyboardChange !== 'm') {
 

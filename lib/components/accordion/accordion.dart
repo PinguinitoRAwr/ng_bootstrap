@@ -1,7 +1,9 @@
-import 'package:angular/angular.dart';
-import 'package:js_shims/js_shims.dart';
-import 'dart:html';
 import 'dart:async';
+import 'dart:html';
+
+import 'package:js_shims/js_shims.dart';
+import 'package:ngdart/angular.dart';
+
 import 'package:ng_bootstrap/components/collapse/collapse.dart';
 
 /// List of directives needed to create an accordion

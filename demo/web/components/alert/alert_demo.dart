@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:angular/angular.dart';
+import 'package:ngdart/angular.dart';
 import 'package:ng_bootstrap/components/alert/alert.dart';
 
 @Component(

@@ -1,9 +1,10 @@
 library bs_dropdown;
 
-import 'package:angular/angular.dart';
-import 'package:js_shims/js_shims.dart';
-import 'dart:html';
 import 'dart:async';
+import 'dart:html';
+
+import 'package:js_shims/js_shims.dart';
+import 'package:ngdart/angular.dart';
 
 part 'dropdown.dart' ;
 part 'menu.dart';
